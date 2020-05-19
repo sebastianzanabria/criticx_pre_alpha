@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company.description %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @company.start_date %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @company.country %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+
+<h3>Games</h3>
+<ul>
+  <% @company.games.each do |game| %>
+  <li>
+    <strong><%= game.name %></strong>
+    <p><%= game.description %></p>
+    <p><%= game.price %></p>
+    <p><%= game.release_date %></p>
+  </li>
+  <% end %>
+</ul>

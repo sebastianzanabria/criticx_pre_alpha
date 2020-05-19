@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Critics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Game</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @critics.each do |critic| %>
+      <tr>
+        <td><%= critic.username %></td>
+        <td><%= critic.title %></td>
+        <td><%= critic.body %></td>
+        <td><%= critic.game_id %></td>
+        <td><%= link_to 'Show', critic %></td>
+        <td><%= link_to 'Edit', edit_critic_path(critic) %></td>
+        <td><%= link_to 'Destroy', critic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Critic', new_critic_path %>
